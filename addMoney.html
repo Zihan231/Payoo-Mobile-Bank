@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Money</title>
+    <!-- DaisyUI Cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Tailwind Cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Fortawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#f4f5f7] max-w-lg mx-auto border-2">
+    <section class="bg-white">
+      <section
+        class="flex justify-between items-center py-[10px] border-b-1 border-gray-300 px-[24px]"
+      >
+        <div class="flex gap-[5px]">
+          <img src="./assets/Group.png" alt="" />
+          <div>
+            <h2 class="font-[900] mb-[6px]">
+              $<span id="availableBalance">45000</span>
+            </h2>
+            <p class="text-[#08080880]">Available Balance</p>
+          </div>
+        </div>
+        <div class="text-[#08080880]">
+          <button id="logOut-btn" class="btn btn-outline border-gray-300">
+            <i class="fa-solid fa-right-from-bracket rotate-180"></i> Log Out
+          </button>
+        </div>
+      </section>
+      <section class="px-[24px] pb-[24px] rounded-b-xl">
+        <div class="mb-[24px]">
+          <h1 class="font-bold text-[24px] mb-[12px] mt-[32px]">
+            🔥 Welcome to Payooo!
+          </h1>
+          <p class="text-[#08080880]">
+            Enjoy easy and convenient financial services with us. Cashout charge
+            is low and
+          </p>
+        </div>
+        <div class="grid grid-cols-3 grid-rows-2 gap-[16px]">
+          <div id="add-money-btn"
+            class="py-[25px] border-1 flex flex-col justify-center items-center rounded-lg text-center border-gray-300 shadow-sm"
+          >
+            <img src="./assets/wallet1.png" alt="Wallet" />
+            <p class="text-[#080808b3] mt-[8px]">Add Money</p>
+          </div>
+          <div
+            id="cashout-btn"
+            class="py-[25px] border-1 flex flex-col justify-center items-center rounded-lg text-center border-gray-300 shadow-sm"
+          >
+            <img src="./assets/send1.png" alt="Wallet" />
+            <p class="text-[#080808b3] mt-[8px]">Cashout</p>
+          </div>
+          <div
+            class="py-[25px] border-1 flex flex-col justify-center items-center rounded-lg text-center border-gray-300 shadow-sm"
+          >
+            <img src="./assets/money1.png" alt="Wallet" />
+            <p class="text-[#080808b3] mt-[8px]">Transfer Money</p>
+          </div>
+          <div
+            class="py-[25px] border-1 flex flex-col justify-center items-center rounded-lg text-center border-gray-300 shadow-sm"
+          >
+            <img src="./assets/bonus1.png" alt="Wallet" />
+            <p class="text-[#080808b3] mt-[8px]">Get bonus</p>
+          </div>
+          <div
+            class="py-[25px] border-1 flex flex-col justify-center items-center rounded-lg text-center border-gray-300 shadow-sm"
+          >
+            <img src="./assets/purse1.png" alt="Wallet" />
+            <p class="text-[#080808b3] mt-[8px]">Pay Bill</p>
+          </div>
+          <div
+            class="py-[25px] border-1 flex flex-col justify-center items-center rounded-lg text-center border-gray-300 shadow-sm"
+          >
+            <img src="./assets/transaction1.png" alt="Wallet" />
+            <p class="text-[#080808b3] mt-[8px]">Transaction</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Add money form -->
+    <section id="add-money" class="px-[24px] pb-[24px]">
+      <h2 class="text-[18px] font-bold mb-[16px]">Add Money</h2>
+      <form class="flex flex-col rounded-xl p-[24px] bg-white">
+        <label for="bank" class="text-[#080808b3] font-[500] mb-[12px]"
+          >Select A Bank</label
+        >
+        <select
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          id="bank"
+          name="bank"
+        >
+          <option value="" disabled selected>Select a Bank</option>
+          <option value="bank1">Bank 1</option>
+          <option value="bank2">Bank 2</option>
+          <option value="bank3">Bank 3</option>
+        </select>
+        <label class="text-[#080808b3] font-[500] mb-[12px]" for="accNum"
+          >Bank Account Number</label
+        >
+        <input
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          type="number"
+          id="accNum"
+          name="accNum"
+          required
+          placeholder="Enter 11 digit account number"
+        />
+        <label class="text-[#080808b3] font-[500] mb-[12px]" for="amount"
+          >Amount to Add</label
+        >
+        <input
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          type="number"
+          id="amount"
+          name="amount"
+          required
+          placeholder="Enter amount to add"
+        />
+        <label class="text-[#080808b3] font-[500] mb-[12px]" for="pin-num"
+          >Pin Number</label
+        >
+        <input
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          type="password"
+          id="pin-num"
+          name="pin-num"
+          required
+          placeholder="Enter 4 digit pin number"
+        />
+        <button
+          id="add-money-form-btn"
+          class="btn btn-primary text-[20px] text-white rounded-[10px] mt-[16px] bg-[#0874f2] border-none hover:bg-[#0a6ed1]"
+        >
+          Add Money
+        </button>
+        <div
+          id="Errormsg"
+          style="display: none"
+          role="alert"
+          class="alert alert-error alert-outline mt-[10px]"
+        >
+          <span>🧩 Something went wrong. Please try again.</span>
+        </div>
+      </form>
+    </section>
+    <!-- Cash Out Form -->
+    <section id="cashout" class="px-[24px] pb-[24px]" style="display: none">
+      <h2 class="text-[18px] font-bold mb-[16px]">Cash Out</h2>
+      <form class="flex flex-col rounded-xl p-[24px] bg-white">
+        <label class="text-[#080808b3] font-[500] mb-[12px]" for="accNum"
+          >Bank Account Number</label
+        >
+        <input
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          type="number"
+          id="accNum-cashout"
+          name="accNum"
+          required
+          placeholder="Enter 11 digit account number"
+        />
+        <label class="text-[#080808b3] font-[500] mb-[12px]" for="amount"
+          >Amount to Cash Out</label
+        >
+        <input
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          type="number"
+          id="amount-cashout"
+          name="amount"
+          required
+          placeholder="Enter amount to add"
+        />
+        <label class="text-[#080808b3] font-[500] mb-[12px]" for="pin-num"
+          >Pin Number</label
+        >
+        <input
+          class="text-[#080808b3] px-[16px] py-[14px] rounded-2xl mb-[12px] border-gray-200 focus:outline-none focus:ring-0 bg-[#f4f5f7]"
+          type="password"
+          id="pin-num-cashout"
+          name="pin-num"
+          required
+          placeholder="Enter 4 digit pin number"
+        />
+        <button
+          id="cashout-form-btn"
+          class="btn btn-primary text-[20px] text-white rounded-[10px] mt-[16px] bg-[#0874f2] border-none hover:bg-[#0a6ed1]"
+        >
+          Cash Out
+        </button>
+        <div
+          id="Errormsg-cashout"
+          style="display: none"
+          role="alert"
+          class="alert alert-error alert-outline mt-[10px]"
+        >
+          <span>🧩 Something went wrong. Please try again.</span>
+        </div>
+      </form>
+    </section>
+    <script src="./addMoney.js"></script>
+  </body>
+</html>
